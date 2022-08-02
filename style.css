@@ -1,9 +1,9 @@
 :root {
     --big-dark:  #2b2d42;
-    --primary-bright: #f72585;
-    --primary-dark: #3a0ca3;
-    --secondary-dark: #480ca8;
-    --secondary-dark-hover: #7209b7;
+    --primary-bright: #d9ed92;
+    --primary-dark: #99d98c;
+    --secondary-dark: #52b69a;
+    --secondary-dark-hover: #168aad;
     --footer: #4361ee;
     --primary-green: #4cc9f0;
   }
@@ -11,7 +11,7 @@
   body{
     display: flex; 
     flex: 1;  
-    background: linear-gradient(-45deg, #f72585, #3a0ca3, #7209b7, #4cc9f0);
+    background: linear-gradient(-45deg, #d9ed92, #52b69a, #168aad, #184e77);
     background-size: 400% 400%;
     animation: gradient 25s ease infinite;
 }
