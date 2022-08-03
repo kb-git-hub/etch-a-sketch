@@ -1,36 +1,36 @@
 @import url(https://fonts.googleapis.com/css?family=Bungee);
 
 :root {
-    --big-dark:  #2b2d42;
+    --big-dark: #2b2d42;
     --primary-blue: #1be7ff;
     --primary-green: #6eeb83;
     --primary-yellow: #e4ff1a;
     --primary-orange: #ffb800;
     --secondary-orange: #ff5714;
     font-family: 'Bungee';
-  }
+}
 
-  body{
-    display: flex; 
-    flex: 1;  
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body {
+    display: flex;
+    flex: 1;
     background: linear-gradient(-45deg, var(--primary-blue), var(--primary-green), var(--primary-yellow), var(--secondary-orange));
     background-size: 400% 400%;
     /* animation: gradient 15s ease infinite; */
 }
 
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
-
-.container{
+.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -38,7 +38,7 @@
     flex-grow: 1;
 }
 
-.sketchPane{
+.sketchPane {
     margin-top: 20px;
     display: flex;
     justify-content: center;
@@ -46,7 +46,8 @@
     width: 100%;
 }
 
-.sketchModLeft, .sketchModRight{
+.sketchModLeft,
+.sketchModRight {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -55,7 +56,7 @@
     align-items: stretch;
 }
 
-.colorPickerBox{
+.colorPickerBox {
     background-color: var(--primary-blue);
     border-radius: 50%;
     margin-bottom: 20px;
@@ -65,7 +66,7 @@
     text-align: center;
 }
 
-.sketchModLeft button{
+.sketchModLeft button {
     background-color: var(--big-dark);
     color: var(--primary-green);
     border: var(--big-dark) 2px solid;
@@ -76,15 +77,15 @@
     cursor: pointer;
 }
 
-.eraser{
+.eraser {
     margin-top: 40px;
 }
 
-.space{
+.space {
     margin-bottom: 80px;
 }
 
-.sketchModRight button{
+.sketchModRight button {
     background-color: var(--big-dark);
     color: var(--primary-blue);
     border: var(--big-dark) 2px solid;
@@ -104,7 +105,7 @@
     width: 100%;
 }
 
-.sketchContainer{
+.sketchContainer {
     width: 600px;
     height: 600px;
     padding: 0;
@@ -115,15 +116,15 @@
 .gridItem {
     background-color: var(--big-dark);
     border: var(--secondary-orange) 1px solid;
-    margin:0;
-	padding:0;
-	border:none;
-	outline:1px solid #000;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: 1px solid #000;
     display: inline-block;
     border-radius: 3px;
 }
 
-.gridSlider{
+.gridSlider {
     color: var(--big-dark);
     width: 100%;
     display: flex;
@@ -131,21 +132,50 @@
     justify-content: center;
     align-items: center;
     height: 80px;
+    margin-top: 10px;
 }
 
 .slider {
-    -webkit-appearance: none;  /* Override default CSS styles */
+    -webkit-appearance: none;
+    /* Override default CSS styles */
     appearance: none;
-    width: 250px; /* Full-width */
-    height: 25px; /* Specified height */
-    background: var(--big-dark); 
-    outline: none; /* Remove outline */
-    opacity: 0.8; 
-    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    width: 250px;
+    /* Full-width */
+    height: 25px;
+    /* Specified height */
+    background: var(--big-dark);
+    outline: none;
+    /* Remove outline */
+    opacity: 1;
+    -webkit-transition: .2s;
+    /* 0.2 seconds transition on hover */
     transition: opacity .2s;
-    border-radius: 4px;
+    border-radius: 5px;
 }
 
-.slider:hover{
+/* .slider:hover {
     opacity: 1;
-}
+} */
+
+.slider::-webkit-slider-thumb {
+    /* -webkit-appearance: none; Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: var(--primary-yellow); /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 20%;
+
+  }
+
+  .sliderValue{
+    background-color: var(--big-dark);
+    margin-top: 10px;
+    color: var(--primary-yellow);
+    width: 140px;
+    height: 28px;
+    text-align: center;
+    border-radius: 5px;
+    padding: 14px 0px;
+
+  }
