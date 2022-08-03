@@ -23,8 +23,8 @@ function createGrid(input) {
     })
 }
 
-// 50 max
-createGrid(25)
+// 40 max
+createGrid(40)
 
 
 
