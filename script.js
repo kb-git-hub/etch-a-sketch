@@ -1,5 +1,5 @@
 const sketchContainer = document.querySelector('.sketchContainer')
-const sketchContainerDims = 500
+const sketchContainerDims = 600
 
 
 function createGrid(input) {
@@ -15,4 +15,7 @@ function createGrid(input) {
     })
 }
 
-createGrid(16)
+
+// 50 max
+createGrid(25)
+
