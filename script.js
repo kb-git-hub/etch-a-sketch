@@ -1,7 +1,14 @@
 const sketchContainer = document.querySelector('.sketchContainer')
 const sketchContainerDims = 600
 
+const slider = document.querySelector('.slider')
+const sliderOutput = document.querySelector('.sliderValue')
 
+sliderOutput.textContent = 'gridsize : ' + slider.value
+
+slider.oninput = function() {
+    sliderOutput.textContent = 'gridsize : ' + this.value
+}
 
 function createGrid(input) {
     for (let row = 0; row < input; row++) {
