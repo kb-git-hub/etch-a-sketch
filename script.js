@@ -2,6 +2,7 @@ const sketchContainer = document.querySelector('.sketchContainer')
 const sketchContainerDims = 600
 
 
+
 function createGrid(input) {
     for (let row = 0; row < input; row++) {
         for (let col = 0; col < input; col++) {
@@ -15,7 +16,8 @@ function createGrid(input) {
     })
 }
 
-
 // 50 max
 createGrid(25)
+
+
 

@@ -15,7 +15,7 @@
     flex: 1;  
     background: linear-gradient(-45deg, var(--primary-blue), var(--primary-green), var(--primary-yellow), var(--secondary-orange));
     background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+    /* animation: gradient 15s ease infinite; */
 }
 
 @keyframes gradient {
@@ -63,8 +63,6 @@
     width: 100px;
     align-self: center;
     text-align: center;
- 
-    /* display: inline-block; */
 }
 
 .sketchModLeft button{
@@ -72,14 +70,18 @@
     color: var(--primary-green);
     border: var(--big-dark) 2px solid;
     padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     border-radius: 10px;
     font-family: 'bungee';
     cursor: pointer;
 }
 
-.rainbow{
-    margin-bottom: 130px;
+.eraser{
+    margin-top: 40px;
+}
+
+.space{
+    margin-bottom: 80px;
 }
 
 .sketchModRight button{
@@ -87,22 +89,10 @@
     color: var(--primary-blue);
     border: var(--big-dark) 2px solid;
     padding: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     border-radius: 10px;
     font-family: 'bungee';
     cursor: pointer;
-}
-
-
-
-.gridSlider{
-    color: var(--big-dark);
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    height: 80px;
 }
 
 .footer {
@@ -115,14 +105,11 @@
 }
 
 .sketchContainer{
-    
     width: 600px;
     height: 600px;
     padding: 0;
     font-size: 0;
-    /* background-color: var(--big-dark); */
     margin: 0px 20px;
-
 }
 
 .gridItem {
@@ -134,4 +121,31 @@
 	outline:1px solid #000;
     display: inline-block;
     border-radius: 3px;
+}
+
+.gridSlider{
+    color: var(--big-dark);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+}
+
+.slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 250px; /* Full-width */
+    height: 25px; /* Specified height */
+    background: var(--big-dark); 
+    outline: none; /* Remove outline */
+    opacity: 0.8; 
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+    border-radius: 4px;
+}
+
+.slider:hover{
+    opacity: 1;
 }
