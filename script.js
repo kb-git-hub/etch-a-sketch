@@ -76,8 +76,11 @@ function activateGrid(){
 
 
 function sketch(e){
-    console.log(e.target);
-    e.target.style.backgroundColor = 'black'
+
+    // e.target.style.backgroundColor = 'black'
+    if (drawMode === 'color'){
+        e.target.style.backgroundColor = color
+    }
     // if
 
     // if
@@ -86,6 +89,8 @@ function sketch(e){
 }
 
 
-
+function createRainbow(){
+    // random between color pallet
+}
 
 
