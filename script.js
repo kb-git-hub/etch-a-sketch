@@ -3,6 +3,7 @@ const sketchContainerDims = 600
 
 const colorMode = document.querySelector('.colorMode')
 const rainbowMode = document.querySelector('.rainbowMode')
+const eraser = document.querySelector('.eraser')
 
 const slider = document.querySelector('.slider')
 const sliderOutput = document.querySelector('.sliderValue')
@@ -20,15 +21,14 @@ document.querySelector('#swatch').addEventListener('change', (e) =>{
 //reset functionality
 reset.addEventListener('mousedown', resetGrid)
 
-
-
+//display grid size text
 sliderOutput.textContent = 'gridsize : ' + slider.value
-
 
 //color Mode
 let drawMode = ''
 colorMode.addEventListener('click', activateColor)
 rainbowMode.addEventListener('click', activateColor)
+eraser.addEventListener('click', activateColor)
 
 function resetGrid() {
     gridItem.forEach((item) => {item.style.backgroundColor = 'var(--big-dark)'})
@@ -89,6 +89,9 @@ function sketch(e){
     // e.target.style.backgroundColor = 'black'
     if (drawMode === 'color'){
         e.target.style.backgroundColor = color
+    } else if (drawMode === 'eraser'){
+        e.target.style.backgroundColor = 'var(--big-dark)'
+
     }
     // if
 
