@@ -6,14 +6,18 @@ const sliderOutput = document.querySelector('.sliderValue')
 
 sliderOutput.textContent = 'gridsize : ' + slider.value
 
+//Display Grid Size
 slider.oninput = function() {
     sliderOutput.textContent = 'gridsize : ' + this.value
 }
 
+
+
 function createGrid(input) {
+    sketchContainer.innerHTML = ''
     for (let row = 0; row < input; row++) {
         for (let col = 0; col < input; col++) {
-            let grid = `<div class='gridItem'></div>`
+            grid = `<div class='gridItem'></div>`
             sketchContainer.innerHTML += grid
         }
     }
@@ -23,8 +27,14 @@ function createGrid(input) {
     })
 }
 
-// 40 max
-createGrid(40)
+//default Grid
+createGrid(20)
+
+
+//Create Grid based on slider value
+slider.addEventListener('mouseup', () => {createGrid(slider.value)})
+
+
 
 
 
