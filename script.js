@@ -1,6 +1,11 @@
 const sketchContainer = document.querySelector('.sketchContainer')
 const sketchContainerDims = 600
 
+let color = document.querySelector('#swatch').value
+document.querySelector('#swatch').addEventListener('change', (e) =>{
+    color = e.target.value
+})
+
 const colorMode = document.querySelector('.colorMode')
 const rainbowMode = document.querySelector('.rainbowMode')
 
