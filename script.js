@@ -1,17 +1,21 @@
 const sketchContainer = document.querySelector('.sketchContainer')
 const sketchContainerDims = 600
 
+//default Grid
+
+
+
 const slider = document.querySelector('.slider')
 const sliderOutput = document.querySelector('.sliderValue')
 
 sliderOutput.textContent = 'gridsize : ' + slider.value
 
+
+
 //Display Grid Size
 slider.oninput = function() {
     sliderOutput.textContent = 'gridsize : ' + this.value
 }
-
-
 
 function createGrid(input) {
     sketchContainer.innerHTML = ''
@@ -27,12 +31,17 @@ function createGrid(input) {
     })
 }
 
-//default Grid
+
+
 createGrid(20)
+let gridItem = document.querySelectorAll('.gridItem')
 
 
 //Create Grid based on slider value
-slider.addEventListener('mouseup', () => {createGrid(slider.value)})
+slider.addEventListener('mouseup', () => {
+    createGrid(slider.value)
+    gridItem = document.querySelectorAll('.gridItem')
+})
 
 
 
