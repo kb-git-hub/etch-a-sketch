@@ -7,6 +7,8 @@ const rainbowMode = document.querySelector('.rainbowMode')
 const slider = document.querySelector('.slider')
 const sliderOutput = document.querySelector('.sliderValue')
 
+let gridItem = document.querySelectorAll('.gridItem')
+
 sliderOutput.textContent = 'gridsize : ' + slider.value
 
 
@@ -16,11 +18,8 @@ colorMode.addEventListener('click', activateColor)
 rainbowMode.addEventListener('click', activateColor)
 
 
-
-
 function activateColor(e){
     drawMode = e.target.textContent
-    console.log('drawMode', drawMode);
 }
 
 
@@ -44,19 +43,36 @@ function createGrid(input) {
         element.style.width = sketchContainerDims / input + 'px'
         element.style.height = sketchContainerDims / input + 'px'
     })
+    activateGrid()
 }
 
 //default Grid
 createGrid(20)
-let gridItem = document.querySelectorAll('.gridItem')
+
+
 
 //Create Grid based on slider value
 slider.addEventListener('mouseup', () => {
     createGrid(slider.value)
-    gridItem = document.querySelectorAll('.gridItem')
+    activateGrid()
+
 })
 
-function sketch(){
+
+//Enable drawing on grid
+function activateGrid(){
+    gridItem = document.querySelectorAll('.gridItem')
+    gridItem.forEach((item) => {item.addEventListener('mouseover', sketch)
+})
+}
+
+
+
+
+
+function sketch(e){
+    console.log(e.target);
+    e.target.style.backgroundColor = 'black'
     // if
 
     // if
