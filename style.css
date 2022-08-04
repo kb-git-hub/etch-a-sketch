@@ -132,6 +132,7 @@ input[type='color'] {
     outline: 1px solid #000;
     display: inline-block;
     border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .gridSlider {
