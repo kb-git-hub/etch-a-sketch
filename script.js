@@ -1,11 +1,6 @@
 const sketchContainer = document.querySelector('.sketchContainer')
 const sketchContainerDims = 600
 
-let color = document.querySelector('#swatch').value
-document.querySelector('#swatch').addEventListener('change', (e) =>{
-    color = e.target.value
-})
-
 const colorMode = document.querySelector('.colorMode')
 const rainbowMode = document.querySelector('.rainbowMode')
 
@@ -13,6 +8,19 @@ const slider = document.querySelector('.slider')
 const sliderOutput = document.querySelector('.sliderValue')
 
 let gridItem = document.querySelectorAll('.gridItem')
+
+const reset = document.querySelector('.reset')
+
+
+let color = document.querySelector('#swatch').value
+document.querySelector('#swatch').addEventListener('change', (e) =>{
+    color = e.target.value
+})
+
+//reset functionality
+reset.addEventListener('mousedown', resetGrid)
+
+
 
 sliderOutput.textContent = 'gridsize : ' + slider.value
 
@@ -22,13 +30,14 @@ let drawMode = ''
 colorMode.addEventListener('click', activateColor)
 rainbowMode.addEventListener('click', activateColor)
 
+function resetGrid() {
+    gridItem.forEach((item) => {item.style.backgroundColor = 'var(--big-dark)'})
+}
+
 
 function activateColor(e){
     drawMode = e.target.textContent
 }
-
-
-
 
 
 //Display Grid Size
