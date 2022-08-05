@@ -101,21 +101,25 @@ function activateGrid() {
 //            e.target.style.backgroundColor = `rgba(${varR}, ${varG}, ${varB}, ${varA}`
 //             varA = varA + 0.02
 //             console.log(e.target.style.backgroundColor)
-function sketch() {
+function sketch(e) {
     //this.style.backgroundColor = 'black'
+    if (e.type === 'mouseover' && !mouseDown === true) return
     if (drawMode === 'color') {
-       this.style.backgroundColor = color
+        this.style.backgroundColor = color
     } else if (drawMode === 'eraser') {
-       this.style.backgroundColor = 'var(--big-dark)'
+        this.style.backgroundColor = 'var(--big-dark)'
     } else if (drawMode === 'rainbow') {
-       this.style.backgroundColor = createRainbow()
+        this.style.backgroundColor = createRainbow()
     } else if (drawMode === 'shade') {
         if (!this.style.backgroundColor) {
-           this.style.backgroundColor = `rgba(${varR}, ${varG}, ${varB}, ${varA}`
+            this.style.backgroundColor = `rgba(${varR}, ${varG}, ${varB}, ${varA}`
         } else {
-          this.style.backgroundColor = `rgba(${varR}, ${varG}, ${varB}, ${varA}`
-            varA = varA + 0.02
-            console.log(this.style.backgroundColor)
+            let currentOpacity = Number(this.style.backgroundColor.slice(-3, -1))
+            console.log(currentOpacity);
+            if (currentOpacity <=0.9){
+                this.style.backgroundColor = `rgba(${varR}, ${varG}, ${varB}, ${currentOpacity + 0.3}`
+            }
+        
         }
     }
     else {
@@ -123,20 +127,6 @@ function sketch() {
     }
 }
 
-/*
-} else if (shading) {
-    // first check to see if this grid item has been shadded. if it hasnt, set data-shade to 1
-    // this is nessesarry to transfer shading between bg color changes
-    if (!e.target.dataset.shade) {
-      e.target.setAttribute('data-shade', '1');
-    } else {
-      // if the grid item has been shadded, increment the data-shade value
-      // this keeps track of how many times the grid item has been shaded
-      let shadeAmount = parseInt(e.target.getAttribute('data-shade'));
-      shadeAmount++;
-      e.target.setAttribute('data-shade', `${shadeAmount}`);
-
-*/
 
 
 function createRainbow() {
