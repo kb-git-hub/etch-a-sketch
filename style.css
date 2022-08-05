@@ -27,8 +27,9 @@ body {
     flex: 1;
     background: linear-gradient(-45deg, var(--primary-blue), var(--primary-green), var(--primary-yellow), var(--secondary-orange));
     background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+    /* animation: gradient 15s ease infinite; */
 }
+
 
 .container {
     display: flex;
@@ -36,6 +37,14 @@ body {
     justify-content: center;
     align-items: center;
     flex-grow: 1;
+    font-size: 16px;
+}
+
+.header{
+    text-align: center;
+    width: 100%;
+    font-size: 2rem;
+    color: var(--big-dark);
 }
 
 .sketchPane {
@@ -85,6 +94,7 @@ input[type='color'] {
     border-radius: 10px;
     font-family: 'bungee';
     cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .eraser {
@@ -104,6 +114,7 @@ input[type='color'] {
     border-radius: 10px;
     font-family: 'bungee';
     cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .footer {
@@ -162,6 +173,7 @@ input[type='color'] {
     /* 0.2 seconds transition on hover */
     transition: opacity .2s;
     border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .slider::-webkit-slider-thumb {
@@ -172,6 +184,7 @@ input[type='color'] {
     background: var(--primary-yellow); /* Green background */
     cursor: pointer; /* Cursor on hover */
     border-radius: 20%;
+    
 
   }
 
@@ -184,6 +197,7 @@ input[type='color'] {
     text-align: center;
     border-radius: 5px;
     padding: 14px 0px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
   }
 
