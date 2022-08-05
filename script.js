@@ -115,8 +115,6 @@ function sketch(e) {
     }
 }
 
-
-
 function createRainbow() {
     let option = Math.floor(Math.random() * 4)
     if (option === 0) { return 'var(--primary-blue)' }
@@ -124,9 +122,4 @@ function createRainbow() {
     if (option === 2) { return 'var(--primary-yellow)' }
     if (option === 3) { return 'var(--primary-orange)' }
     if (option === 4) { return 'var(--secondary-orange)' }
-
-}
-
-function overlapShade() {
-
 }
