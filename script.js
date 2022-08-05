@@ -14,12 +14,16 @@ const reset = document.querySelector('.reset')
 
 
 let color = document.querySelector('#swatch').value
-document.querySelector('#swatch').addEventListener('change', (e) =>{
+document.querySelector('#swatch').addEventListener('change', (e) => {
     color = e.target.value
 })
 
+let mouseDown = false
+document.body.onmousedown = () => mouseDown = true
+document.body.onmouseup = () => mouseDown = false
+
 //reset functionality
-reset.addEventListener('mousedown', resetGrid)
+reset.addEventListener('click', resetGrid)
 
 //display grid size text
 sliderOutput.textContent = 'gridsize : ' + slider.value
@@ -31,17 +35,15 @@ rainbowMode.addEventListener('click', activateColor)
 eraser.addEventListener('click', activateColor)
 
 function resetGrid() {
-    gridItem.forEach((item) => {item.style.backgroundColor = 'var(--big-dark)'})
+    gridItem.forEach((item) => { item.style.backgroundColor = 'var(--big-dark)' })
 }
 
 
-function activateColor(e){
-    drawMode = e.target.textContent
-}
+function activateColor(e) { drawMode = e.target.textContent }
 
 
 //Display Grid Size
-slider.oninput = function() {
+slider.oninput = function () {
     sliderOutput.textContent = 'gridsize : ' + this.value
 }
 
@@ -74,35 +76,43 @@ slider.addEventListener('mouseup', () => {
 
 
 //Enable drawing on grid
-function activateGrid(){
+function activateGrid() {
     gridItem = document.querySelectorAll('.gridItem')
-    gridItem.forEach((item) => {item.addEventListener('mouseover', sketch)
-})
+    gridItem.forEach((item) => {
+        item.addEventListener('mouseover', sketch)
+    })
 }
 
 
 
 
 
-function sketch(e){
+function sketch(e) {
+
+    if (e.type === 'mouseover' && !mouseDown === true) return
 
     // e.target.style.backgroundColor = 'black'
-    if (drawMode === 'color'){
+    if (drawMode === 'color') {
         e.target.style.backgroundColor = color
-    } else if (drawMode === 'eraser'){
+    } else if (drawMode === 'eraser') {
         e.target.style.backgroundColor = 'var(--big-dark)'
+    }else if (drawMode === 'rainbow'){
+        e.target.style.backgroundColor = createRainbow()
+    } else{
+        e.target.style.backgroundColor = color
 
     }
-    // if
 
-    // if
 
-    // background = 
 }
 
 
-function createRainbow(){
-    // random between color pallet
+function createRainbow() {
+    let option = Math.floor(Math.random() * 4)
+    if (option === 0){ return 'var(--primary-blue)'}
+    if (option === 1){ return 'var(--primary-green)'}
+    if (option === 2){ return 'var(--primary-yellow)'}
+    if (option === 3){ return 'var(--primary-orange)'}
+    if (option === 4){ return 'var(--secondary-orange)'}
+  
 }
-
-
