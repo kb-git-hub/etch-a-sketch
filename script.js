@@ -88,6 +88,7 @@ function sketch(e) {
     if (e.type === 'mouseover' && !mouseDown === true) return
     if (drawMode === 'color') {
         this.style.backgroundColor = color
+        this.classList.remove('shade')
     } else if (drawMode === 'eraser') {
         this.style.backgroundColor = 'var(--big-dark)'
     } else if (drawMode === 'rainbow') {
@@ -110,6 +111,7 @@ function sketch(e) {
     }
     else {
         this.style.backgroundColor = color
+        this.classList.remove('shade')
     }
 }
 
