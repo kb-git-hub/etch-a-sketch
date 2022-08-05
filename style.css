@@ -203,3 +203,8 @@ input[type='color'] {
 
   }
 
+
+  .shade{
+    border: none;
+    outline: none;
+  }

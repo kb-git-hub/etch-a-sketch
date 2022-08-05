@@ -13,9 +13,9 @@ let gridItem = document.querySelectorAll('.gridItem')
 
 const reset = document.querySelector('.reset')
 
-let varR = 245
-let varG = 245
-let varB = 245
+let varR = 43
+let varG = 45
+let varB = 66
 let varA = 0
 
 let color = document.querySelector('#swatch').value
@@ -83,24 +83,6 @@ function activateGrid() {
     })
 }
 
-// function sketch(e) {
-
-//     if (e.type === 'mouseover' && !mouseDown === true) return
-
-//     // e.target.style.backgroundColor = 'black'
-//     if (drawMode === 'color') {
-//         e.target.style.backgroundColor = color
-//     } else if (drawMode === 'eraser') {
-//         e.target.style.backgroundColor = 'var(--big-dark)'
-//     } else if (drawMode === 'rainbow') {
-//         e.target.style.backgroundColor = createRainbow()
-//     } else if (drawMode === 'shade') {
-//         if (!e.target.style.backgroundColor) {
-//             e.target.style.backgroundColor = `rgba(${varR}, ${varG}, ${varB}, ${varA}`
-//         } else {
-//            e.target.style.backgroundColor = `rgba(${varR}, ${varG}, ${varB}, ${varA}`
-//             varA = varA + 0.02
-//             console.log(e.target.style.backgroundColor)
 function sketch(e) {
     //this.style.backgroundColor = 'black'
     if (e.type === 'mouseover' && !mouseDown === true) return
@@ -111,15 +93,19 @@ function sketch(e) {
     } else if (drawMode === 'rainbow') {
         this.style.backgroundColor = createRainbow()
     } else if (drawMode === 'shade') {
+        this.classList.add('shade')
         if (!this.style.backgroundColor) {
             this.style.backgroundColor = `rgba(${varR}, ${varG}, ${varB}, ${varA}`
         } else {
             let currentOpacity = Number(this.style.backgroundColor.slice(-3, -1))
+            console.log(this.style.backgroundColor, 'background color') 
             console.log(currentOpacity);
             if (currentOpacity <=0.9){
                 this.style.backgroundColor = `rgba(${varR}, ${varG}, ${varB}, ${currentOpacity + 0.3}`
+            } else{
+                this.classList.remove('shade')
+                this.style.backgroundColor = 'var(--big-dark)'
             }
-        
         }
     }
     else {
