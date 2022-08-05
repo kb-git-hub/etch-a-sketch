@@ -43,8 +43,10 @@ body {
 .header{
     text-align: center;
     width: 100%;
-    font-size: 2rem;
+    font-size: 3rem;
     color: var(--big-dark);
+  
+   
 }
 
 .sketchPane {
